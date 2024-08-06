@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TICKETMOVIE", "TICKETMOVIE\TICKETMOVIE.csproj", "{03FE6962-5E6C-474F-9F21-0E334D81BAAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03FE6962-5E6C-474F-9F21-0E334D81BAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FE6962-5E6C-474F-9F21-0E334D81BAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FE6962-5E6C-474F-9F21-0E334D81BAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FE6962-5E6C-474F-9F21-0E334D81BAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E269A321-9AE5-4074-9106-185111A09465}
+	EndGlobalSection
+EndGlobal

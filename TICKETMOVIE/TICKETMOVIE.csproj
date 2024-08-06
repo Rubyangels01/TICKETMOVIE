@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03FE6962-5E6C-474F-9F21-0E334D81BAAE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TICKETMOVIE</RootNamespace>
+    <AssemblyName>TICKETMOVIE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Client.cs" />
+    <Compile Include="basecontroller.cs" />
+    <Compile Include="BaseInterface\Controller.cs" />
+    <Compile Include="BaseInterface\IMovieService.cs" />
+    <Compile Include="BaseInterface\View.cs" />
+    <Compile Include="Controller\AllRevenuControllercs.cs" />
+    <Compile Include="Controller\AllScheduleController.cs" />
+    <Compile Include="Controller\DetailTheaterController.cs" />
+    <Compile Include="Controller\ListMovieAdminController.cs" />
+    <Compile Include="Controller\ListMovieController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MovieController.cs" />
+    <Compile Include="Controller\RevenuController.cs" />
+    <Compile Include="Controller\RevenueController.cs" />
+    <Compile Include="Controller\RoomShowingController.cs" />
+    <Compile Include="Controller\ScheduleOfMovieController.cs" />
+    <Compile Include="Controller\TheaterController.cs" />
+    <Compile Include="Custom\Admin\MovieCustomAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\Admin\MovieCustomAdmin.Designer.cs">
+      <DependentUpon>MovieCustomAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\DateShowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\DateShowControl.Designer.cs">
+      <DependentUpon>DateShowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\LeftImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\LeftImage.Designer.cs">
+      <DependentUpon>LeftImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\RevenueCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\RevenueCustom.Designer.cs">
+      <DependentUpon>RevenueCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\RoomCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\RoomCustom.Designer.cs">
+      <DependentUpon>RoomCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\ShowTimeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\ShowTimeControl.Designer.cs">
+      <DependentUpon>ShowTimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\TheaterCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\TheaterCustom.Designer.cs">
+      <DependentUpon>TheaterCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbHelper.cs" />
+    <Compile Include="DetailTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailTheater.Designer.cs">
+      <DependentUpon>DetailTheater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMovie.Designer.cs">
+      <DependentUpon>FormDetailMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListMoviePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListMoviePage.Designer.cs">
+      <DependentUpon>ListMoviePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListReveneuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListReveneuForm.Designer.cs">
+      <DependentUpon>ListReveneuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logincs.Designer.cs">
+      <DependentUpon>Logincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Movie.cs" />
+    <Compile Include="Model\ResData.cs" />
+    <Compile Include="Model\Revenue.cs" />
+    <Compile Include="Model\Rooms.cs" />
+    <Compile Include="Custom\MovieCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\MovieCustom.Designer.cs">
+      <DependentUpon>MovieCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Schedule.cs" />
+    <Compile Include="Model\Theaters.cs" />
+    <Compile Include="Model\Ticket.cs" />
+    <Compile Include="Model\Managers.cs" />
+    <Compile Include="Model\Ticket2.cs" />
+    <Compile Include="Model\TimeShow.cs" />
+    <Compile Include="Model\Usersession.cs" />
+    <Compile Include="MoviePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoviePage.Designer.cs">
+      <DependentUpon>MoviePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevenuePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RevenuePage.Designer.cs">
+      <DependentUpon>RevenuePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomShow.Designer.cs">
+      <DependentUpon>RoomShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleForm.Designer.cs">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleOfMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleOfMovie.Designer.cs">
+      <DependentUpon>ScheduleOfMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\HelperResData.cs" />
+    <Compile Include="Service\MovieService.cs" />
+    <Compile Include="Service\TicketService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketCustomer.Designer.cs">
+      <DependentUpon>TicketCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Admin\AddMoviePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\AddMoviePage.Designer.cs">
+      <DependentUpon>AddMoviePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Admin\HomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\HomeAdmin.Designer.cs">
+      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Admin\ListMovieAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\ListMovieAdmin.Designer.cs">
+      <DependentUpon>ListMovieAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Admin\RevenueMovieAllTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\RevenueMovieAllTheater.Designer.cs">
+      <DependentUpon>RevenueMovieAllTheater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Admin\TheaterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\TheaterForm.Designer.cs">
+      <DependentUpon>TheaterForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\Admin\MovieCustomAdmin.resx">
+      <DependentUpon>MovieCustomAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\DateShowControl.resx">
+      <DependentUpon>DateShowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\LeftImage.resx">
+      <DependentUpon>LeftImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\RevenueCustom.resx">
+      <DependentUpon>RevenueCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\RoomCustom.resx">
+      <DependentUpon>RoomCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\ShowTimeControl.resx">
+      <DependentUpon>ShowTimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\TheaterCustom.resx">
+      <DependentUpon>TheaterCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailTheater.resx">
+      <DependentUpon>DetailTheater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMovie.resx">
+      <DependentUpon>FormDetailMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListMoviePage.resx">
+      <DependentUpon>ListMoviePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom\MovieCustom.resx">
+      <DependentUpon>MovieCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListReveneuForm.resx">
+      <DependentUpon>ListReveneuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logincs.resx">
+      <DependentUpon>Logincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoviePage.resx">
+      <DependentUpon>MoviePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RevenuePage.resx">
+      <DependentUpon>RevenuePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomShow.resx">
+      <DependentUpon>RoomShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleForm.resx">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleOfMovie.resx">
+      <DependentUpon>ScheduleOfMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketCustomer.resx">
+      <DependentUpon>TicketCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\AddMoviePage.resx">
+      <DependentUpon>AddMoviePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\HomeAdmin.resx">
+      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\ListMovieAdmin.resx">
+      <DependentUpon>ListMovieAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\RevenueMovieAllTheater.resx">
+      <DependentUpon>RevenueMovieAllTheater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\TheaterForm.resx">
+      <DependentUpon>TheaterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\oclock.jpg" />
+    <None Include="Resources\pandoraimage.jpg" />
+    <None Include="Resources\myaccount.jpg" />
+    <None Include="Resources\icon_back1.jpg" />
+    <None Include="Resources\header2.jpg" />
+    <None Include="Resources\header1.jpg" />
+    <None Include="Resources\header_main2.jpg" />
+    <None Include="Resources\add2.jpg" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\header_main1.jpg" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\background_login.jpg" />
+    <None Include="Resources\header.jpg" />
+    <None Include="Resources\header_main.jpg" />
+    <None Include="Resources\add1.jpg" />
+    <None Include="Resources\add.jpg" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\icon_back.jpg" />
+    <None Include="Resources\img_movie.jpg" />
+    <None Include="Resources\imgmovie.jpg" />
+    <None Include="Resources\iconreload.png" />
+    <None Include="Resources\icon edit.png" />
+    <None Include="Resources\oclock.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
