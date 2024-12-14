@@ -43,6 +43,10 @@
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -70,6 +74,7 @@
     <Compile Include="BaseInterface\Controller.cs" />
     <Compile Include="BaseInterface\IMovieService.cs" />
     <Compile Include="BaseInterface\View.cs" />
+    <Compile Include="Controller\AddPromotionController.cs" />
     <Compile Include="Controller\AllRevenuControllercs.cs" />
     <Compile Include="Controller\AllScheduleController.cs" />
     <Compile Include="Controller\DetailTheaterController.cs" />
@@ -168,6 +173,7 @@
       <DependentUpon>Logincs.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Movie.cs" />
+    <Compile Include="Model\Promotion.cs" />
     <Compile Include="Model\ResData.cs" />
     <Compile Include="Model\Revenue.cs" />
     <Compile Include="Model\Rooms.cs" />
@@ -232,11 +238,23 @@
     <Compile Include="TicketCustomer.Designer.cs">
       <DependentUpon>TicketCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Admin\AddAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\AddAccount.Designer.cs">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Admin\AddMoviePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ui\Admin\AddMoviePage.Designer.cs">
       <DependentUpon>AddMoviePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Admin\AddPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\AddPromotion.Designer.cs">
+      <DependentUpon>AddPromotion.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Admin\HomeAdmin.cs">
       <SubType>Form</SubType>
@@ -249,6 +267,12 @@
     </Compile>
     <Compile Include="Ui\Admin\ListMovieAdmin.Designer.cs">
       <DependentUpon>ListMovieAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Admin\ListPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Admin\ListPromotion.Designer.cs">
+      <DependentUpon>ListPromotion.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Admin\RevenueMovieAllTheater.cs">
       <SubType>Form</SubType>
@@ -336,14 +360,23 @@
     <EmbeddedResource Include="TicketCustomer.resx">
       <DependentUpon>TicketCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\AddAccount.resx">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Admin\AddMoviePage.resx">
       <DependentUpon>AddMoviePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\AddPromotion.resx">
+      <DependentUpon>AddPromotion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Admin\HomeAdmin.resx">
       <DependentUpon>HomeAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Admin\ListMovieAdmin.resx">
       <DependentUpon>ListMovieAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Admin\ListPromotion.resx">
+      <DependentUpon>ListPromotion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Admin\RevenueMovieAllTheater.resx">
       <DependentUpon>RevenueMovieAllTheater.cs</DependentUpon>
@@ -367,6 +400,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\oclock.jpg" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\account.png" />
     <None Include="Resources\pandoraimage.jpg" />
     <None Include="Resources\myaccount.jpg" />
     <None Include="Resources\icon_back1.jpg" />

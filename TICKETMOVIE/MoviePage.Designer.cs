@@ -56,8 +56,8 @@ namespace TICKETMOVIE
             this.label2 = new System.Windows.Forms.Label();
             this.cb_hour = new System.Windows.Forms.ComboBox();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
-            this.cb_minute = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cb_minute = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeChartRangeControlClient1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edshowdate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edshowdate.Properties)).BeginInit();
@@ -369,16 +369,6 @@ namespace TICKETMOVIE
             this.sidePanel1.TabIndex = 0;
             this.sidePanel1.Text = "sidePanel1";
             // 
-            // cb_minute
-            // 
-            this.cb_minute.Enabled = false;
-            this.cb_minute.FormattingEnabled = true;
-            this.cb_minute.Location = new System.Drawing.Point(751, 108);
-            this.cb_minute.Name = "cb_minute";
-            this.cb_minute.Size = new System.Drawing.Size(121, 24);
-            this.cb_minute.TabIndex = 30;
-            this.cb_minute.SelectedIndexChanged += new System.EventHandler(this.cb_minute_SelectedIndexChanged);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -392,6 +382,16 @@ namespace TICKETMOVIE
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(680, 405);
             this.dataGridView1.TabIndex = 31;
+            // 
+            // cb_minute
+            // 
+            this.cb_minute.Enabled = false;
+            this.cb_minute.FormattingEnabled = true;
+            this.cb_minute.Location = new System.Drawing.Point(751, 108);
+            this.cb_minute.Name = "cb_minute";
+            this.cb_minute.Size = new System.Drawing.Size(121, 24);
+            this.cb_minute.TabIndex = 30;
+            this.cb_minute.SelectedIndexChanged += new System.EventHandler(this.cb_minute_SelectedIndexChanged);
             // 
             // MoviePage
             // 

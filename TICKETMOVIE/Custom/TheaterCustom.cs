@@ -37,6 +37,7 @@ namespace TICKETMOVIE.Custom
                     {
                         
                         form.GetListMovie(idTheater);
+                    form.DisplayInfor(theaters);
                         form.StartPosition = FormStartPosition.CenterScreen;
 
                         form.ShowDialog(); // Hiển thị form như hộp thoại

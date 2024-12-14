@@ -65,22 +65,8 @@ namespace TICKETMOVIE
             // Đặt vị trí cho txtnamemovie
             txtnamemovie.Location = new Point((this.Width - txtnamemovie.Width) / 2, txtnamemovie.Location.Y);
 
-            // Tính toán lại vị trí của releasedDate dựa trên chiều cao của txtnamemovie
-            releaseddate.Text = movie.releasedDate.ToString();
-            releaseddate.AutoSize = true;
-            releaseddate.Location = new Point(txtnamemovie.Location.X, txtnamemovie.Location.Y + txtnamemovie.Height + 5);
-            releaseddate.TextAlign = ContentAlignment.MiddleCenter;
-
-            // Đặt vị trí cho các nút btnxem và btn_XemRevenue trên cùng một hàng và dưới releaseddate
-            int buttonSpacing = 10; // Khoảng cách giữa hai nút
-            btnxem.Location = new Point(releaseddate.Location.X, releaseddate.Location.Y + releaseddate.Height + 5);
-            btn_XemRevenue.Location = new Point(btnxem.Location.X + btnxem.Width + buttonSpacing, btnxem.Location.Y);
-
-            // Căn chỉnh các nút vào giữa
-            int totalButtonWidth = btnxem.Width + buttonSpacing + btn_XemRevenue.Width;
-            btnxem.Location = new Point((this.Width - totalButtonWidth) / 2, btnxem.Location.Y);
-            btn_XemRevenue.Location = new Point(btnxem.Location.X + btnxem.Width + buttonSpacing, btnxem.Location.Y);
-
+            
+           
 
             btn_XemRevenue.Tag = movie;
            

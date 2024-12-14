@@ -79,5 +79,10 @@ namespace TICKETMOVIE
 
 
         }
+
+        private void ListReveneuForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

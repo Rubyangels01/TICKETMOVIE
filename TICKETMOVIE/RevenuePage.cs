@@ -36,13 +36,24 @@ namespace TICKETMOVIE
         }
         public void LoadRevenue(Revenue revenue)
         {
+            if (revenue != null)
+            {
+                // Định dạng TotalRevenue với dấu phân cách hàng nghìn
+                txtdoanso.Text = string.Format("{0:N0} VND", revenue.TotalRevenue);
 
-            txtdoanso.Text = revenue.TotalRevenue;
-            txtnumberticket.Text = revenue.TotalTickets;
-            txtshowcasing.Text = revenue.ShowCount;
-            
-
+                // Chuyển đổi TotalTickets và ShowCount sang chuỗi
+                txtnumberticket.Text = revenue.TotalTickets.ToString();
+                txtshowcasing.Text = revenue.ShowCount.ToString();
+            }
+            else
+            {
+                // Nếu revenue là null, có thể hiển thị thông báo hoặc đặt giá trị mặc định
+                txtdoanso.Text = "0 VND";
+                txtnumberticket.Text = "0";
+                txtshowcasing.Text = "0";
+            }
         }
+
 
         internal void DisplayMovie(Movie movie)
         {

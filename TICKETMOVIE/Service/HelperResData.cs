@@ -153,7 +153,7 @@ namespace TICKETMOVIE
                 }
                 else
                 {
-                    // Xử lý khi jsonString rỗng hoặc null
+                   
                     Console.WriteLine("Empty response from server.");
                     return null;
                 }

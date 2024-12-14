@@ -31,9 +31,10 @@ namespace TICKETMOVIE
         {
             this.dgvTicket = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.numberticket = new System.Windows.Forms.Label();
             this.numberRevenue = new System.Windows.Forms.Label();
+            this.numberticket = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -57,6 +58,7 @@ namespace TICKETMOVIE
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_export);
             this.panel1.Controls.Add(this.numberRevenue);
             this.panel1.Controls.Add(this.numberticket);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -64,6 +66,26 @@ namespace TICKETMOVIE
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1269, 100);
             this.panel1.TabIndex = 1;
+            // 
+            // numberRevenue
+            // 
+            this.numberRevenue.AutoSize = true;
+            this.numberRevenue.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberRevenue.Location = new System.Drawing.Point(634, 34);
+            this.numberRevenue.Name = "numberRevenue";
+            this.numberRevenue.Size = new System.Drawing.Size(66, 27);
+            this.numberRevenue.TabIndex = 1;
+            this.numberRevenue.Text = "label2";
+            // 
+            // numberticket
+            // 
+            this.numberticket.AutoSize = true;
+            this.numberticket.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberticket.Location = new System.Drawing.Point(191, 34);
+            this.numberticket.Name = "numberticket";
+            this.numberticket.Size = new System.Drawing.Size(66, 27);
+            this.numberticket.TabIndex = 0;
+            this.numberticket.Text = "label1";
             // 
             // panel2
             // 
@@ -74,25 +96,15 @@ namespace TICKETMOVIE
             this.panel2.Size = new System.Drawing.Size(1269, 501);
             this.panel2.TabIndex = 2;
             // 
-            // numberticket
+            // btn_export
             // 
-            this.numberticket.AutoSize = true;
-            this.numberticket.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberticket.Location = new System.Drawing.Point(317, 34);
-            this.numberticket.Name = "numberticket";
-            this.numberticket.Size = new System.Drawing.Size(66, 27);
-            this.numberticket.TabIndex = 0;
-            this.numberticket.Text = "label1";
-            // 
-            // numberRevenue
-            // 
-            this.numberRevenue.AutoSize = true;
-            this.numberRevenue.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberRevenue.Location = new System.Drawing.Point(741, 33);
-            this.numberRevenue.Name = "numberRevenue";
-            this.numberRevenue.Size = new System.Drawing.Size(66, 27);
-            this.numberRevenue.TabIndex = 1;
-            this.numberRevenue.Text = "label2";
+            this.btn_export.Location = new System.Drawing.Point(1089, 26);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(109, 48);
+            this.btn_export.TabIndex = 2;
+            this.btn_export.Text = "In hoá đơn";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
             // TicketCustomer
             // 
@@ -118,5 +130,6 @@ namespace TICKETMOVIE
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label numberRevenue;
         private System.Windows.Forms.Label numberticket;
+        private System.Windows.Forms.Button btn_export;
     }
 }

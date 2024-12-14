@@ -74,7 +74,7 @@ namespace TICKETMOVIE.Ui.Admin
 
         public async Task UploadMovieAsync()
         {
-            var url = "http://192.168.1.8:3002/movies/movie"; // Thay đổi thành URL của API
+            var url = "http://192.168.1.203:3002/movies/movie"; // Thay đổi thành URL của API
 
             using (var form = new MultipartFormDataContent())
             {
@@ -119,10 +119,53 @@ namespace TICKETMOVIE.Ui.Admin
             }
             }
         }
+        public bool CheckComponent()
+        {
+            if (txtnamemovie.Text.Length == 0)
+            {
+                return false;
+            }
+            else if (txttime.Text.Length == 0)
+            {
+                return false;
+            }
+            else if (txtprice.Text.Length == 0)
+            {
+                return false;
+            }
+            else if (txtcast.Text.Length == 0)
+            {
+                return false;
+            }
+            else if (txtdescription.Text.Length == 0)
+            {
+                return false;
+            }
+
+            else if (cblanguage.Text.Length == 0)
+            {
+                return false;
+            }
+            else if (datereleaseddate.Text.Length == 0)
+            {
+                return false;
+            }
+            return true;
+        }
 
         private async void btnAddMovie_Click(object sender, EventArgs e)
         {
-          await  UploadMovieAsync();
+            if(CheckComponent() == true)
+            {
+                await UploadMovieAsync();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng không để trống!", "Thông báo", MessageBoxButtons.OK);
+            } 
+
+            
+          
         }
 
         private void cbtype_SelectedIndexChanged(object sender, EventArgs e)

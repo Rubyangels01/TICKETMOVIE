@@ -54,16 +54,26 @@ namespace TICKETMOVIE
 
         private void control_account_Click(object sender, EventArgs e)
         {
-            UserSession.idUser = 0;
-            using (Logincs form = new Logincs())
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK)
             {
-                this.Hide();
-                form.StartPosition = FormStartPosition.CenterScreen;
-                form.WindowState = FormWindowState.Maximized;
-                form.ShowDialog(); // Hiển thị form như hộp thoại
-                this.Close();
+                UserSession.idUser = 0;
+                using (Logincs form = new Logincs())
+                {
+                    this.Hide();
+                    form.StartPosition = FormStartPosition.CenterScreen;
+                    form.WindowState = FormWindowState.Maximized;
+                    form.ShowDialog(); // Hiển thị form như hộp thoại
+                    this.Close();
+                }
+            }
+            else
+            {
+                // Nếu người dùng chọn Cancel, không làm gì cả
             }
         }
+
 
         private void control_ticket_Click(object sender, EventArgs e)
         {

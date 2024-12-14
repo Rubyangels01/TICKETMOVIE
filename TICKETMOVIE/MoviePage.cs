@@ -30,7 +30,9 @@ namespace TICKETMOVIE
             
             var movieService = new MovieService(); // Tạo đối tượng MovieService
             this.movieController = new MovieController(movieService, this);
-           
+            edshowdate.EditValue = DateTime.Now;
+            cb_hour.Text = DateTime.Now.Hour.ToString();
+            
         }
         
         private void setdataHour()
@@ -118,66 +120,12 @@ namespace TICKETMOVIE
         {
             
         }
-        /*
-        private void GenerateLabels()
-        {
-            panel_hourshow.Controls.Clear(); // Xóa các điều khiển cũ
-
-            int numberOfShows = int.Parse(txtnumbershow.Text);
-            DateTime showDate = DateTime.Parse(edshowdate.Text);
-            string[] showTimes = { "10:30", "11:45", "12:55" ,"16:15"};
-
-            for (int i = 0; i < numberOfShows; i++)
-            {
-                if (i >= showTimes.Length) break; // Kiểm tra nếu vượt quá số phần tử trong showTimes
-
-                TextBox lblShowTime = new TextBox
-                {
-                    Text = $"{showTimes[i]}",
-                    AutoSize = true,
-                    Margin = new Padding(10), // Khoảng cách giữa các label
-                    Enabled = false,
-                    TextAlign = HorizontalAlignment.Center,
-                    Font = new Font("Verina", 10), // Cỡ chữ
-                    Padding = new Padding(7, 7, 7, 7) // Khoảng cách bên trong
-                    
-                };
-
-                // Thêm label vào panel
-                panel_hourshow.Controls.Add(lblShowTime);
-            }
-
-            // Sử dụng FlowLayoutPanel để bố trí các label
-            if (panel_hourshow is FlowLayoutPanel flowLayoutPanel)
-            {
-                flowLayoutPanel.AutoScroll = true;
-                flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
-                flowLayoutPanel.WrapContents = false;
-                
-            }
-            panel_displayschedule.Visible = true;
-        }
-        */
-
+       
         private void btncreateschedule_Click(object sender, EventArgs e)
         {
             CreateDetailMovie();
-        }
-        private void DisplayShowTimes(Dictionary<DateTime, List<string>> showTimesByDate)
-        {
-            //panel_main_schedule.Controls.Clear();
-
-            foreach (var dateTimePair in showTimesByDate)
-            {
-               // DateShowControl dateShowControl = new DateShowControl(dateTimePair.Value.Count, edshowdate.Text, dateTimePair.Value.ToArray());
-               // panel_main_schedule.Controls.Add(dateShowControl);
-            }
-        }
-
-        
-        String showdate = "";
-        
-        
+        }            
+        String showdate = "";      
         public void LoadRoomNotHaveShedule(List<Rooms> rooms)
         {
             
@@ -187,39 +135,65 @@ namespace TICKETMOVIE
         }
 
         
-        public async void SaveSchedulesOfMovieInTEMP(int idMovie, int idRoom, string showDate, string listtimeshow)
-        {
-            //await movieController.SaveScheduleOfMovieINTEMPAsync(idMovie, idRoom, showDate, listtimeshow);
-            
-        }
+        
         private void edshowdate_EditValueChanged(object sender, EventArgs e)
         {        
             showdate = edshowdate.Text.ToString();
             cb_hour.Enabled = true;
             
             setdataHour();
-            //GetRoomNotHaveSchedule();
         }
        
         
         public void DeleteFill()
         {
             cb_room.Text = "";
+            edshowdate.Text = "";
+            cb_hour.Text = "";
+            cb_minute.Text = "";
            
+        }
+        public bool CheckComponent()
+        {
+            if(cb_room.Text.Length == 0)
+            {
+                return false;
+            }  
+            else if(edshowdate.Text.Length == 0)
+            {
+                return false;
+            }   
+            else if(cb_minute.Text.Length == 0)
+            {
+                return false;
+            }   
+            else if(cb_hour.Text.Length == 0)
+            {
+                return false;
+            }
+            return true;
         }
         public async void CreateDetailMovie()
         {
-            string time = selectedhour + ":" + selectedMinute;
-            string date = dbHelper.ConvertDate(showdate, "yyyy-MM-dd") + " " + time;
-            int value =(int) cb_room.SelectedValue;
-            if(dbHelper.CheckDate(date))
+           if(CheckComponent() == false)
             {
-                await movieController.CreateDetailMovie(movie1.idMovie, (int)cb_room.SelectedValue, 2, date);
-            } 
+                MessageBox.Show("Vui lòng không để trống");
+            }    
             else
             {
-                MessageBox.Show("Ngày đặt lịch chiếu không hợp lệ!");
+                string time = selectedhour + ":" + selectedMinute;
+                string date = dbHelper.ConvertDate(showdate, "yyyy-MM-dd") + " " + time;
+                int value = (int)cb_room.SelectedValue;
+                if (dbHelper.CheckDate(date))
+                {
+                    await movieController.CreateDetailMovie(movie1.idMovie, (int)cb_room.SelectedValue, UserSession.idUser, date);
+                }
+                else
+                {
+                    MessageBox.Show("Ngày đặt lịch chiếu không hợp lệ!");
+                }
             }    
+            
             
         }
         private void btn_Save_Click(object sender, EventArgs e)
@@ -258,7 +232,7 @@ namespace TICKETMOVIE
             string time = selectedhour + ":" + selectedMinute;
             string date = dbHelper.ConvertDate(showdate, "yyyy-MM-dd") + " " + time;
            
-            await movieController.GetRoomNotScheduleByMovieAsync(1,date,movie1.time);
+            await movieController.GetRoomNotScheduleByMovieAsync(UserSession.idTheater,date,movie1.time);
         }
     }
 }

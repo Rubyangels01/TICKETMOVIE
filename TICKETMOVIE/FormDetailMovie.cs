@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,7 +61,7 @@ namespace TICKETMOVIE
             }
             txtnamemovie.Text = movie.getNameMovie();
             txttime.Text = movie.time + " Phút";
-            txtreleaseddate.Text = movie.releasedDate.ToString();
+            txtreleaseddate.Text = movie.releasedDate.ToString("dd-MM-yyyy");
             txtlanguage.Text = movie.language;
             txtcast.Text = movie.cast;
             txtdescription.Text = movie.desciption;
@@ -125,6 +126,33 @@ namespace TICKETMOVIE
         private void icon_back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void Displaytoggle()
+        {
+            if (CheckAdmin())
+            {
+                toggleSwitch1.Visible = true;
+            }
+            else
+            {
+                toggleSwitch1.Visible = false;
+            }
+        }
+
+        private void toggleSwitch1_Toggled(object sender, EventArgs e)
+        {
+
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+           
+            if (toggleSwitch.IsOn)
+            {
+                MessageBox.Show("Switch is ON");
+            }
+            else
+            {
+                MessageBox.Show("Switch is OFF");
+            }
         }
     }
 }

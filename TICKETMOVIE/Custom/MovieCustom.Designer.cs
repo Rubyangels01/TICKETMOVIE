@@ -33,7 +33,6 @@ namespace TICKETMOVIE
             this.img_movie = new System.Windows.Forms.PictureBox();
             this.btnxem = new System.Windows.Forms.Button();
             this.btn_XemRevenue = new System.Windows.Forms.Button();
-            this.releaseddate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_movie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,21 +81,10 @@ namespace TICKETMOVIE
             this.btn_XemRevenue.UseVisualStyleBackColor = false;
             this.btn_XemRevenue.Click += new System.EventHandler(this.btn_XemRevenue_Click);
             // 
-            // releaseddate
-            // 
-            this.releaseddate.AutoSize = true;
-            this.releaseddate.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.releaseddate.Location = new System.Drawing.Point(124, 406);
-            this.releaseddate.Name = "releaseddate";
-            this.releaseddate.Size = new System.Drawing.Size(83, 23);
-            this.releaseddate.TabIndex = 5;
-            this.releaseddate.Text = "17/8/2024";
-            // 
             // MovieCustom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.releaseddate);
             this.Controls.Add(this.btn_XemRevenue);
             this.Controls.Add(this.btnxem);
             this.Controls.Add(this.txtnamemovie);
@@ -115,6 +103,5 @@ namespace TICKETMOVIE
         private System.Windows.Forms.Label txtnamemovie;
         private System.Windows.Forms.Button btnxem;
         private System.Windows.Forms.Button btn_XemRevenue;
-        private System.Windows.Forms.Label releaseddate;
     }
 }

@@ -8,16 +8,16 @@ namespace TICKETMOVIE
 {
     public class Client
     {
-         
+         private string PORT = "172.20.10.3";
          protected String urluser { get; set; }
          protected String urlmovie { get; set; }
          protected String urlticket { get; set; }
 
        public Client()
         {
-            this.urluser = "http://192.168.1.8:3000/api/users/";
-            this.urlmovie = "http://192.168.1.8:3002/movies/";
-            this.urlticket = "http://192.168.1.8:3004/tickets/";
+            this.urluser = "http://"+ PORT +":3000/api/users/";
+            this.urlmovie = "http://" + PORT + ":3002/movies/";
+            this.urlticket = "http://" + PORT + ":3004/tickets/";
         }
 
 

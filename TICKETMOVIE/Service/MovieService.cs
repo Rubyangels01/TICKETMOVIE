@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Text;
+using TICKETMOVIE.Model;
 
 namespace TICKETMOVIE
 {
@@ -118,7 +120,36 @@ namespace TICKETMOVIE
 
         }
 
+        public (string url, StringContent content) UrlPutStatusMovie(int status, int idMovie)
+        {
+            string url = $"movie/{idMovie}";
+            var content = new StringContent(
+                $"{{ \"status\": {status}}}",
+                Encoding.UTF8,
+                "application/json");
+            return (url, content);
+        }
+        public (string url, StringContent content) UrlAddPromotion(Promotion promotion)
+        {
+            // Đường dẫn API
+            string url = "voucher";
 
+            // Serialize đối tượng promotion thành JSON
+            string jsonData = JsonConvert.SerializeObject(new
+            {
+                namePromotion = promotion.namePromotion,
+                percentSell = promotion.percentSell,
+                totalBill = promotion.totalBill,
+                description = promotion.description,
+                startDate = dbHelper.ConvertDate(promotion.startDate, "yyyy-MM-dd"), // Format ngày phù hợp với SQL
+                endDate = dbHelper.ConvertDate(promotion.endDate, "yyyy-MM-dd")      // Format ngày phù hợp với SQL
+            }); ;
+
+            // Tạo StringContent để gửi qua HTTP
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            return (url, content);
+        }
 
 
 

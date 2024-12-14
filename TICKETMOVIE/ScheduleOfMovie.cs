@@ -68,10 +68,10 @@ namespace TICKETMOVIE
                 form.StartPosition = FormStartPosition.CenterScreen;
                 form.FormClosed += (s, args) =>
                 {
-                    // Hiển thị lại form cha
+                    
                     this.Show();
                 };
-                form.ShowDialog(); // Hiển thị form như hộp thoại
+                form.ShowDialog(); 
             }
         }
 

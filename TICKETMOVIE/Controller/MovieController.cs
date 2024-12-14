@@ -142,6 +142,7 @@ namespace TICKETMOVIE
                 if (res != null && (res.code == 201 || res.code == 200))
                 {
                     MessageBox.Show("Thêm lịch chiếu phim thành công!", "Thông báo", MessageBoxButtons.OK);
+                    View.DeleteFill();
                    
                 }
                 else

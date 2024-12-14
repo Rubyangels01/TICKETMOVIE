@@ -30,16 +30,16 @@ namespace TICKETMOVIE
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateStartDate = new DevExpress.XtraEditors.DateEdit();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.dgvRevenue = new System.Windows.Forms.DataGridView();
-            this.dateStartDate = new DevExpress.XtraEditors.DateEdit();
             this.dateTimeChartRangeControlClient1 = new DevExpress.XtraEditors.DateTimeChartRangeControlClient();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeChartRangeControlClient1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,31 @@ namespace TICKETMOVIE
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1426, 100);
             this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(109, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 27);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Ngày bắt đầu chiếu";
+            // 
+            // dateStartDate
+            // 
+            this.dateStartDate.EditValue = null;
+            this.dateStartDate.Location = new System.Drawing.Point(322, 44);
+            this.dateStartDate.Name = "dateStartDate";
+            this.dateStartDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.dateStartDate.Properties.Appearance.Options.UseFont = true;
+            this.dateStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateStartDate.Size = new System.Drawing.Size(328, 28);
+            this.dateStartDate.TabIndex = 1;
+            this.dateStartDate.EditValueChanged += new System.EventHandler(this.dateStartDate_EditValueChanged);
             // 
             // searchControl1
             // 
@@ -81,31 +106,6 @@ namespace TICKETMOVIE
             this.dgvRevenue.Size = new System.Drawing.Size(1426, 629);
             this.dgvRevenue.TabIndex = 2;
             // 
-            // dateStartDate
-            // 
-            this.dateStartDate.EditValue = null;
-            this.dateStartDate.Location = new System.Drawing.Point(322, 44);
-            this.dateStartDate.Name = "dateStartDate";
-            this.dateStartDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.dateStartDate.Properties.Appearance.Options.UseFont = true;
-            this.dateStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateStartDate.Size = new System.Drawing.Size(328, 28);
-            this.dateStartDate.TabIndex = 1;
-            this.dateStartDate.EditValueChanged += new System.EventHandler(this.dateStartDate_EditValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 27);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Ngày bắt đầu chiếu";
-            // 
             // ListReveneuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -115,12 +115,13 @@ namespace TICKETMOVIE
             this.Controls.Add(this.panel1);
             this.Name = "ListReveneuForm";
             this.Text = "ListReveneuForm";
+            this.Load += new System.EventHandler(this.ListReveneuForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStartDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeChartRangeControlClient1)).EndInit();
             this.ResumeLayout(false);
 

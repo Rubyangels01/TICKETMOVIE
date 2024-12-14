@@ -18,6 +18,7 @@ namespace TICKETMOVIE.Ui.Admin
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
             this.WindowState = FormWindowState.Maximized;
+            ShowFormInPanel(new ListMovieAdmin());
         }
         public void ShowFormInPanel(Form formToShow)
         {
@@ -70,6 +71,21 @@ namespace TICKETMOVIE.Ui.Admin
         private void btn_revenueoftheater_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new TheaterForm());
+        }
+
+        private void btn_addaccount_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new AddAccount());
+        }
+
+        private void pagePromotion_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new ListPromotion());
+        }
+
+        private void addpromotionpage_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new AddPromotion());
         }
     }
 }

@@ -39,7 +39,8 @@ namespace TICKETMOVIE.Ui.Admin
                 {
                     nametheater = theater.nameTheater,
                     address = theater.address,
-                    idTheater = theater.idTheater
+                    idTheater = theater.idTheater,
+                    theaters = theater
 
                 };
                 theaterCustom.DisplayUI();

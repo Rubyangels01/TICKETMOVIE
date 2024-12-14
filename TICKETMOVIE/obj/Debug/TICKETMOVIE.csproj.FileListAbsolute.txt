@@ -124,7 +124,10 @@ D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Custom.TheaterCustom.resources
 D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Ui.Admin.TheaterForm.resources
 D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Custom.Admin.MovieCustomAdmin.resources
 D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Ui.Admin.RevenueMovieAllTheater.resources
-D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.csproj.AssemblyReference.cache
 D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.TicketCustomer.resources
 D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Ui.Admin.ListMovieAdmin.resources
 D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.DetailTheater.resources
+D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.csproj.AssemblyReference.cache
+D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Ui.Admin.AddAccount.resources
+D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Ui.Admin.AddPromotion.resources
+D:\TICKETMOVIE\TICKETMOVIE\obj\Debug\TICKETMOVIE.Ui.Admin.ListPromotion.resources

@@ -30,9 +30,9 @@ namespace TICKETMOVIE
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowpanelmovie = new System.Windows.Forms.FlowLayoutPanel();
-            this.tvnameMovie = new System.Windows.Forms.Label();
             this.tvAddress = new System.Windows.Forms.Label();
+            this.tvnameMovie = new System.Windows.Forms.Label();
+            this.flowpanelmovie = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,28 @@ namespace TICKETMOVIE
             this.panel1.Size = new System.Drawing.Size(1306, 94);
             this.panel1.TabIndex = 0;
             // 
+            // tvAddress
+            // 
+            this.tvAddress.AutoSize = true;
+            this.tvAddress.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvAddress.Location = new System.Drawing.Point(618, 31);
+            this.tvAddress.Name = "tvAddress";
+            this.tvAddress.Size = new System.Drawing.Size(475, 27);
+            this.tvAddress.TabIndex = 1;
+            this.tvAddress.Text = "127 LÊ VĂN VIỆT, HIỆP PHÚ, THỦ ĐỨC, TP. HCM";
+            this.tvAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tvnameMovie
+            // 
+            this.tvnameMovie.AutoSize = true;
+            this.tvnameMovie.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvnameMovie.Location = new System.Drawing.Point(237, 31);
+            this.tvnameMovie.Name = "tvnameMovie";
+            this.tvnameMovie.Size = new System.Drawing.Size(187, 27);
+            this.tvnameMovie.TabIndex = 0;
+            this.tvnameMovie.Text = "CGV LÊ VĂN VIỆT";
+            this.tvnameMovie.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // flowpanelmovie
             // 
             this.flowpanelmovie.AutoScroll = true;
@@ -56,26 +78,6 @@ namespace TICKETMOVIE
             this.flowpanelmovie.Name = "flowpanelmovie";
             this.flowpanelmovie.Size = new System.Drawing.Size(1306, 505);
             this.flowpanelmovie.TabIndex = 1;
-            // 
-            // tvnameMovie
-            // 
-            this.tvnameMovie.AutoSize = true;
-            this.tvnameMovie.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tvnameMovie.Location = new System.Drawing.Point(296, 31);
-            this.tvnameMovie.Name = "tvnameMovie";
-            this.tvnameMovie.Size = new System.Drawing.Size(187, 27);
-            this.tvnameMovie.TabIndex = 0;
-            this.tvnameMovie.Text = "CGV LÊ VĂN VIỆT";
-            // 
-            // tvAddress
-            // 
-            this.tvAddress.AutoSize = true;
-            this.tvAddress.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tvAddress.Location = new System.Drawing.Point(721, 31);
-            this.tvAddress.Name = "tvAddress";
-            this.tvAddress.Size = new System.Drawing.Size(475, 27);
-            this.tvAddress.TabIndex = 1;
-            this.tvAddress.Text = "127 LÊ VĂN VIỆT, HIỆP PHÚ, THỦ ĐỨC, TP. HCM";
             // 
             // DetailTheater
             // 

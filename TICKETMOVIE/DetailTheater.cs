@@ -21,7 +21,12 @@ namespace TICKETMOVIE
            
             InitializeComponent();
             var movieService = new MovieService();
-            detailtheaterController = new DetailTheaterController(movieService, this);
+            detailtheaterController = new DetailTheaterController(movieService, this);        
+        }
+        public void DisplayInfor(Theaters theaters)
+        {
+            tvnameMovie.Text = theaters.nameTheater;
+            tvAddress.Text = theaters.address;
         }
         public async void GetListMovie(int idTheater)
         {

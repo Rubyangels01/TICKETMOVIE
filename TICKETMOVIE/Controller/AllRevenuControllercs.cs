@@ -46,7 +46,7 @@ namespace TICKETMOVIE.Controller
                         if (listrevenue.Count == 0)
                         {
                             View.ClearData();
-                            MessageBox.Show("Danh sách lịch trống", "Thông báo", MessageBoxButtons.OK);
+                            MessageBox.Show("Danh sách doanh thu trống", "Thông báo", MessageBoxButtons.OK);
                         }
                         else
                         {

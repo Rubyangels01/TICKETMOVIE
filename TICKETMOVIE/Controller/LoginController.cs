@@ -21,27 +21,32 @@ namespace TICKETMOVIE.Controller
             this.View = activity;
             movieResData = new MovieResData();
         }
+        
 
         public async Task LoginAsync(string email, string password)
         {
-
+      
             try
             {
+               
                 var (url, content) = SerVice.UrlLogin(email, password);
+                
                 ResData res = await movieResData.GetResDataWithBodyUser(url, content);
                
 
                 if (res == null)
                 {
+                    
                     MessageBox.Show("Lỗi hệ thống,vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK);
                 }
                 else
                 {
+                    
                     if (res.code == 201 || res.code == 200)
                     {
                         
                         Managers user = dbHelper.ConvertToClass<Managers>(res.data);
-                       
+                        
                         UserSession.idUser = user.IDManager;
                         if (user.Email.Contains("admin"))
                         {
