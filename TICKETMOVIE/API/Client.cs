@@ -19,10 +19,5 @@ namespace TICKETMOVIE
             this.urlmovie = "http://" + PORT + ":3002/movies/";
             this.urlticket = "http://" + PORT + ":3004/tickets/";
         }
-
-
-
-
-
     }
 }

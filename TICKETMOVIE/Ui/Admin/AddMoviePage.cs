@@ -74,7 +74,7 @@ namespace TICKETMOVIE.Ui.Admin
 
         public async Task UploadMovieAsync()
         {
-            var url = "http://192.168.1.203:3002/movies/movie"; // Thay đổi thành URL của API
+            var url = "http://172.20.10.3:3002/movies/movie"; // Thay đổi thành URL của API
 
             using (var form = new MultipartFormDataContent())
             {
